@@ -1,0 +1,27 @@
+digraph {
+	A [label=Start fillcolor="#2d4b87" fontcolor=white shape=rect style=filled]
+	B [label="Divide image into 3x3 grid cells" fillcolor="#ff8c1a" fontcolor=white shape=rect style=filled]
+	C [label="Define anchor boxes" fillcolor="#ff8c1a" fontcolor=white shape=rect style=filled]
+	D [label="Output vector for each grid cell with anchor box number" fillcolor="#ff8c1a" fontcolor=white shape=rect style=filled]
+	E [label="Generate bounding box prediction with pc bx by bw h c1 to cm" fillcolor="#ff8c1a" fontcolor=white shape=rect style=filled]
+	F [label="Is pc above threshold?" fillcolor="#2d871c" fontcolor=white shape=diamond style=filled]
+	G [label="Discard bounding box" fillcolor="#d62728" fontcolor=white shape=rect style=filled]
+	H [label="Keep bounding box" fillcolor="#a55ef0" fontcolor=white shape=rect style=filled]
+	I [label="For each category c perform non-max suppression" fillcolor="#ff8c1a" fontcolor=white shape=rect style=filled]
+	J [label="Identify bounding box with highest probability" fillcolor="#ff8c1a" fontcolor=white shape=rect style=filled]
+	K [label="Remove overlapping boxes using IoU" fillcolor="#ff8c1a" fontcolor=white shape=rect style=filled]
+	L [label="Output final bounding box predictions" fillcolor="#17becf" fontcolor=white shape=rect style=filled]
+	M [label=End fillcolor="#2d4b87" fontcolor=white shape=rect style=filled]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G [label=No]
+	F -> H [label=Yes]
+	H -> I
+	I -> J
+	J -> K
+	K -> L
+	L -> M
+}

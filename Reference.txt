@@ -1,0 +1,5 @@
+Title- Beyond the Harvest: Innovative Regression Models for Agricultural Yield Prediction
+
+Result- Extra Trees	0.991602(Best Accuracy)
+
+dataset - https://www.kaggle.com/datasets/patelris/crop-yield-prediction-dataset?resource=download
